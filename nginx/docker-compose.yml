@@ -8,7 +8,7 @@ services:
     volumes:
       - /home/docker-nginx-test/config/vhost_wp.conf:/etc/nginx/conf.d/vhost_wp.conf
     ports:
-      - "8500:80"
+      - "port_wordpress_change:80"
     expose:
-      - 8500
+      - port_wordpress_change
     restart: always
