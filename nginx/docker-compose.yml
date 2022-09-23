@@ -6,7 +6,7 @@ services:
     network_mode: host
     image: nginx:latest
     volumes:
-      - dir_wordpress_change/config/vhost_wp.conf:/etc/nginx/conf.d/vhost_wp.conf
+      - /var/www/domain_wordpress_change/dockerwp/config/vhost_wp.conf:/etc/nginx/conf.d/vhost_wp.conf
     ports:
       - "port_wordpress_change:80"
     expose:
