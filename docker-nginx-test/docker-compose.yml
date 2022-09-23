@@ -1,0 +1,20 @@
+version: "3"
+
+services: 
+
+  nginx:
+    network_mode: host
+    image: nginx:latest
+    volumes:
+      - /home/docker-nginx-test/config/vhost.conf:/etc/nginx/conf.d/default.conf
+      - /home/docker-nginx-test/config/vhost2.conf:/etc/nginx/conf.d/default2.conf
+      - /home/docker-nginx-test/config/vhost_wp.conf:/etc/nginx/conf.d/vhost_wp.conf
+    ports:
+      - "80:80"
+      - "8085:80"
+      - "8500:80"
+    expose:
+      - 3359
+      - 4517
+      - 8500
+    restart: always
