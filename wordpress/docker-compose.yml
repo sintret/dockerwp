@@ -8,8 +8,8 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: password_wordpress_change
       MARIADB_DATABASE: db_wp
-      MARIADB_USER: root
-      MARIADB_PASSWORD: root
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: password_wordpress_change
 
   wordpress:
     depends_on:
@@ -22,7 +22,7 @@ services:
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: password_wordpress_change
       WORDPRESS_DB_NAME: db_wp
 volumes:
