@@ -6,9 +6,9 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: password_wordpress_change
-      MARIADB_DATABASE: db_wp
-      MARIADB_USER: wordpress
+      MARIADB_ROOT_PASSWORD: mysecret_live
+      MARIADB_DATABASE: wordpress_db
+      MARIADB_USER: user_wordpress
       MARIADB_PASSWORD: password_wordpress_change
 
   wordpress:
@@ -22,9 +22,9 @@ services:
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_USER: user_wordpress
       WORDPRESS_DB_PASSWORD: password_wordpress_change
-      WORDPRESS_DB_NAME: db_wp
+      WORDPRESS_DB_NAME: wordpress_db
 volumes:
   db_data: {}
   wordpress_data: {}
